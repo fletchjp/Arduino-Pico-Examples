@@ -16,3 +16,9 @@ The suppliers have put Micropython examples in a repository called ArdiPi_Softwa
 
 I asked about support for the Arduino-Pico system and have a very dismissive reply so I will keep software for it away from them for now.
 
+I have started to add some examples I have found elsewhere.
+
+## Multicore
+
+This is a test code which comes with the Arduino-Pico system.
+
