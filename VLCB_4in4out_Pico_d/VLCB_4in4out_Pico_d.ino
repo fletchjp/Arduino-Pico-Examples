@@ -1,6 +1,8 @@
+
 // VLCB4IN4OUT
 // Version for use with Raspberry Pi Pico with software CAN Controller.
 // Uses both cores of the RP2040.
+// Copy for the ArdiPi which has a buzzer
 
 
 /*
@@ -42,14 +44,14 @@
 // Pin 19  GP14 CBUS green LED pin
 // Pin 20  GP15 CBUS yellow LED pin
 // Pin 21  GP16 Not Used
-// Pin 22  GP17 Not Used
+// Pin 22  GP17 LED 1 (was on GP22)
 // Pin 23       0V
 // Pin 24  GP18 Switch 1
 // Pin 25  GP19 Switch 2
 // Pin 26  GP20 Switch 3
 // Pin 27  GP21 Switch 4
 // Pin 28       0V
-// Pin 29  GP22 LED 1
+// Pin 29  GP22 ArdiPi BUZZER
 // Pin 30  RUN Reset (active low)
 // Pin 31  GP26 LED 2
 // Pin 32  GP27 LED 3
@@ -124,7 +126,7 @@ VLCB::Controller controller(&modconfig,
 unsigned char mname[7] = { '4', 'I', 'N', '4', 'O', 'U', 'T' };
 
 // Module objects
-const byte LED[] = { 22, 26, 27, 28 };     // LED pin connections through typ. 1K8 resistor
+const byte LED[] = { 17, 26, 27, 28 };     // LED pin connections through typ. 1K8 resistor
 const byte SWITCH[] = { 18, 19, 20, 21 };  // Module Switch takes input to 0V.
 
 const bool active = 0;  // 0 is for active low LED drive. 1 is for active high
@@ -225,6 +227,7 @@ void setupModule()
 void setup() 
 {
   Serial.begin(115200);
+  while (!Serial) {};
   delay(2000);
   Serial << endl << get_core_num() << F("> ** VLCB 4 in 4 out Pico Dual Core ** ") << __FILE__ << endl;
 
