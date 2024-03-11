@@ -231,6 +231,9 @@ void setup()
   delay(1000);
   Serial << endl << endl << F("> ** VLCB 4 in 4 out Pico single core ** ") << __FILE__ << endl;
 
+  // show code version and copyright notice
+  printConfig();
+
   setupVLCB();
   setupModule();
 
