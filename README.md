@@ -6,7 +6,11 @@ I have examples which I have put together for a number of different RP2040 syste
 
 This repository is somewhere to gather them together.
 
+I have several different sets of Pico hardware and some of the examples may work on one and not others. 
+
 ## ArdiPi
+
+From SB components
 
 This is a board with an Arduino UNO form factor carrying a Raspberry Pi Pico.
 
@@ -18,7 +22,18 @@ I asked about support for the Arduino-Pico system and have a very dismissive rep
 
 I have started to add some examples I have found elsewhere.
 
+## Pico Breadboard
+
+From SB components
+
+I have had this for some time. The pico sits on it.
+
 ## Multicore
 
-This is a test code which comes with the Arduino-Pico system.
+This is a test code which comes with the Arduino-Pico system. It should work with anything.
+
+## MulticoreWithBuzz
+
+This extends the Multicore example using the buzzer which is in a fixed location on the ArdiPi.
+
 
