@@ -76,6 +76,12 @@
 // 3rd party libraries
 #include <Streaming.h>
 #include <Bounce2.h>
+#include <PWMAudio.h>
+#define BUZZER_PIN 22
+
+PWMAudio pwm(BUZZER_PIN);
+
+
 
 // VLCB library header files
 #include <Controller.h>                   // Controller class
@@ -143,6 +149,17 @@ byte switchState[NUM_SWITCHES];
 void eventhandler(byte, const VLCB::VlcbMessage *);
 void printConfig();
 void processSwitches();
+
+// This function causes a problem if defined with the buzzer code above.
+// I don't know why this is.
+void buzz()
+{
+  for (int i = 100; i < 10000; i += 1) {
+    tone(BUZZER_PIN, i);
+    delayMicroseconds(20);
+  }
+  tone(BUZZER_PIN, 0);
+}
 
 //
 ///  setup VLCB - runs once at power on called from setup()
@@ -238,6 +255,7 @@ void setup()
 
   // end of setup
   DEBUG_PRINT(get_core_num() << F("> VLCB ready"));
+  buzz();
 //  delay(20);
 }
 
