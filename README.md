@@ -34,7 +34,7 @@ This is a test code which comes with the Arduino-Pico system. It should work wit
 
 ## MulticoreWithBuzz
 
-This extends the Multicore example using the buzzer which is in a fixed location on the ArdiPi.
+This extends the Multicore example using the buzzer which is in a fixed location on the ArdiPi. It also runs on the Pico Breadboard as well.
 
 # CBUS examples
 
@@ -44,3 +44,6 @@ These mostly come from MERG-Arduino-Software/CBUScodes. I have copied them uncha
 
 There is quite a lot to be done here.
 
+# VLCB codes
+
+I have one of these working as well.
