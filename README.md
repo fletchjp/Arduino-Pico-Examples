@@ -26,7 +26,7 @@ I have started to add some examples I have found elsewhere.
 
 From SB components
 
-I have had this for some time. The pico sits on it.
+I have had this for some time. The pico sits on it.-
 
 ## Multicore
 
@@ -36,4 +36,11 @@ This is a test code which comes with the Arduino-Pico system. It should work wit
 
 This extends the Multicore example using the buzzer which is in a fixed location on the ArdiPi.
 
+# CBUS examples
+
+I have also collected some examples of work with RP2040s to run CBUS modules. This is in an early state.
+
+These mostly come from MERG-Arduino-Software/CBUScodes. I have copied them unchanged although they will start to change here.
+
+There is quite a lot to be done here.
 
