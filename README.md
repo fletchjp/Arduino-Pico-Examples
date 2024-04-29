@@ -36,6 +36,10 @@ This is a test code which comes with the Arduino-Pico system. It should work wit
 
 This extends the Multicore example using the buzzer which is in a fixed location on the ArdiPi. It also runs on the Pico Breadboard as well.
 
+## Multicore_FreeRTOS
+
+Example using FreeRTOS management for tasks. Taken from library examples.
+
 # CBUS examples
 
 I have also collected some examples of work with RP2040s to run CBUS modules. This is in an early state.
