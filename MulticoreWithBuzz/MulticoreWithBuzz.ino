@@ -1,5 +1,6 @@
 // MulticoreWithBuzz.ino
 // Add a buzz using the ArdiPi buzzer
+// Also working with the Pico Breadboard Buzzer (Pin GP22)
 
 // Demonstrates a simple use of the setup1()/loop1() functions
 // for a multiprocessor run.
