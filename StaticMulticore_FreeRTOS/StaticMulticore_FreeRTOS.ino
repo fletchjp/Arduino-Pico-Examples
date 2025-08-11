@@ -39,6 +39,9 @@ TaskHandle_t ledOnTask, ledOffTask;
 
 void setup() {
   SERIAL_PORT.begin(115200);
+#ifdef ARDUINO_ARCH_RP2040
+  SERIAL_PORT.println("\nArduino RP2040");
+#endif
   pinMode(LED_BUILTIN, OUTPUT);
 
   /* Create a mutex semaphore without using any dynamic memory
