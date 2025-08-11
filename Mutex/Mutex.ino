@@ -28,8 +28,10 @@ int globalCount = 0;
 void setup() {
 
   Serial.begin(115200);
+  delay(1000);
+
 #ifdef ARDUINO_ARCH_RP2040
-  Serial.println("\nArduino RP2040");
+  Serial.printf("\nArduino RP2040\n");
 #endif
   delay(5000);
 
@@ -39,14 +41,15 @@ void setup() {
   */
   mutex = xSemaphoreCreateMutex();
   if (mutex != NULL) {
-    Serial.println("Mutex created");
+    Serial.printf("Mutex created\n");
   }
 
   /**
      Create tasks
   */
 #ifdef ARDUINO_ARCH_RP2040
-  xTaskCreate(TaskMutex, "Task1", 128, nullptr, 1, nullptr);
+  int value1 = 1000;
+  xTaskCreate(TaskMutex, "Task1", 128, &value1, 1, nullptr);
 #else
   xTaskCreate(TaskMutex, // Task function
               "Task1", // Task name for humans
@@ -57,16 +60,16 @@ void setup() {
 #endif
 
 #ifdef ARDUINO_ARCH_RP2040
-  xTaskCreate(TaskMutex, "Task2", 128, nullptr, 1, nullptr);
+  int value2 = 1000;
+  xTaskCreate(TaskMutex, "Task2", 128, &value2, 1, nullptr);
 #else
   xTaskCreate(TaskMutex, "Task2", 128, 1000, 1, NULL);
 #endif
 }
 
 void loop() {
-  Serial.printf("val: %d\n", v);
+  Serial.printf("\nHello from loop\n");
   delay(1000);
-
 }
 
 void TaskMutex(void *pvParameters)
