@@ -1,5 +1,6 @@
 // Mutex.ino
 // Copied from Arduino_FreeRTOS
+// Task creation changed for RP2040.
 
 /*
    Example of a FreeRTOS mutex
@@ -26,10 +27,11 @@ int globalCount = 0;
 
 void setup() {
 
-  Serial.begin(9600);
+  Serial.begin(115200);
 #ifdef ARDUINO_ARCH_RP2040
   Serial.println("\nArduino RP2040");
 #endif
+  delay(5000);
 
   /**
        Create a mutex.
@@ -61,7 +63,11 @@ void setup() {
 #endif
 }
 
-void loop() {}
+void loop() {
+  Serial.printf("val: %d\n", v);
+  delay(1000);
+
+}
 
 void TaskMutex(void *pvParameters)
 {
